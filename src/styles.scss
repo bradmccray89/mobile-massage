@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  @apply text-white;
+}
+
+.page-container {
+  @apply absolute left-0 top-20 p-4 md:px-20 lg:px-20 w-full flex justify-center items-start;
+}

@@ -1,7 +1,9 @@
 <div
-  class="absolute top-0 left-0 h-20 w-full flex justify-between items-center px-4"
+  class="absolute top-0 left-0 h-20 w-full flex justify-between items-center px-4 md:px-20 lg:px-40"
 >
-  <div class="">Mobile Massage of Raleigh</div>
+  <div class="font-semibold text-2xl cursor-pointer" [routerLink]="'home'">
+    Mobile Massage of Raleigh
+  </div>
   <div class="flex items-center">
     <div
       *ngFor="let link of navLinks"
