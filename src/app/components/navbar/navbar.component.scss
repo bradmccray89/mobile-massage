@@ -1,0 +1,7 @@
+.nav-link {
+  @apply py-2 px-4 rounded hover:bg-slate-500/10 cursor-pointer;
+}
+
+.active-link {
+  @apply bg-slate-500/10;
+}
