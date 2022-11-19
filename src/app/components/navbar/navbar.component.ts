@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,14 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('menu') menu: any;
+  menuOpen: boolean = false;
   navLinks = [
     { path: 'home', label: 'Home' },
     { path: 'about', label: 'About' },
-    { path: 'services', label: 'Services' },
+    { path: 'services', label: 'Treatments' },
     { path: 'contact', label: 'Contact' },
   ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }

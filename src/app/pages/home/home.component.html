@@ -1,14 +1,16 @@
 <div class="page-container">
-  <div class="flex flex-col items-center gap-4">
-    <div
-      class="p-4 text-xl text-center border border-gray-400 rounded bg-white/20 backdrop-blur-md"
+  <div
+    class="flex flex-col items-center justify-center w-full h-full p-4 text-4xl font-bold text-white gap-y-20"
+  >
+    <span class="text-center">
+      The relaxation of a massage in the comfort of your home.
+    </span>
+    <button
+      type="button"
+      class="px-8 py-4 text-lg bg-teal-500 rounded-xl hover:bg-teal-400"
+      [routerLink]="['/services']"
     >
-      The relaxation of a massage <br />
-      in the comfort of your home.
-    </div>
-    <img
-      src="./assets/back-rub.jpg"
-      class="border border-gray-400 rounded h-72"
-    />
+      Book an Appointment
+    </button>
   </div>
 </div>

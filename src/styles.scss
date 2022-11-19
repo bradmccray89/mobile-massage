@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  @apply text-gray-700;
-}
-
 .page-container {
-  @apply absolute left-0 top-20 p-4 md:px-20 lg:px-20 w-full flex justify-center items-start;
+  @apply absolute left-0 top-20 md:top-28 bottom-0 pb-20 p-4 md:px-20 lg:px-20 w-full flex justify-center items-start text-white overflow-auto;
 }

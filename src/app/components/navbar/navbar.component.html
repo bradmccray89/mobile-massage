@@ -1,15 +1,53 @@
 <div
-  class="absolute top-0 left-0 h-20 w-full flex justify-between items-center px-4 md:px-20 lg:px-40"
+  class="absolute top-0 left-0 flex items-center justify-between w-full h-20 px-4 text-gray-700 md:h-28 md:px-20 lg:px-40 bg-neutral-100/80"
 >
-  <div class="font-semibold text-2xl cursor-pointer" [routerLink]="'home'">
+  <div
+    class="text-lg font-semibold cursor-pointer md:text-2xl"
+    [routerLink]="'home'"
+  >
     Mobile Massage of Raleigh
   </div>
-  <div class="flex items-center">
+  <div class="items-center hidden lg:flex">
     <div
       *ngFor="let link of navLinks"
       class="nav-link"
       [routerLink]="link.path"
       [routerLinkActive]="'active-link'"
+    >
+      {{ link.label }}
+    </div>
+  </div>
+  <div class="relative flex border-gray-400 lg:hidden">
+    <button
+      *ngIf="!menuOpen"
+      class="flex flex-col items-center w-8 h-8 justify-evenly"
+      type="button"
+      (click)="toggleMenu()"
+    >
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+    <button
+      *ngIf="menuOpen"
+      class="relative flex flex-col w-8 h-8"
+      type="button"
+      (click)="toggleMenu()"
+    >
+      <span class="close-hamburger"></span>
+      <span class="close-hamburger"></span>
+    </button>
+  </div>
+  <div
+    #menu
+    *ngIf="menuOpen"
+    class="absolute right-0 z-50 w-full max-w-[450px] bg-neutral-200 top-20 md:top-28"
+  >
+    <div
+      *ngFor="let link of navLinks"
+      class="nav-link-mobile"
+      [routerLink]="link.path"
+      (click)="toggleMenu()"
     >
       {{ link.label }}
     </div>
