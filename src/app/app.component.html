@@ -1,8 +1,8 @@
 <div class="relative w-screen h-screen bg-img">
   <div class="w-full h-full backdrop-blur-sm bg-black/50">
     <app-navbar></app-navbar>
-    <div [@fadeInOut]="outlet.isActivated ? outlet.activatedRoute : ''">
-      <router-outlet #outlet="outlet"></router-outlet>
+    <div [@routeAnimations]="getRouteAnimationData()">
+      <router-outlet></router-outlet>
     </div>
     <app-footer></app-footer>
   </div>

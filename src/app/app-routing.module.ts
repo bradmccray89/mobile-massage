@@ -1,27 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ServicesComponent } from './pages/services/services.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
+    component: HomeComponent,
+    data: { animation: 'home' },
   },
   {
     path: 'about',
-    loadChildren: () =>
-      import('./pages/about/about.module').then((m) => m.AboutModule),
+    component: AboutComponent,
+    data: { animation: 'about' },
   },
   {
     path: 'services',
-    loadChildren: () =>
-      import('./pages/services/services.module').then((m) => m.ServicesModule),
+    component: ServicesComponent,
+    data: { animation: 'services' },
   },
   {
     path: 'contact',
-    loadChildren: () =>
-      import('./pages/contact/contact.module').then((m) => m.ContactModule),
+    component: ContactComponent,
+    data: { animation: 'contact' },
   },
 ];
 
