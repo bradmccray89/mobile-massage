@@ -2,12 +2,12 @@
   class="absolute top-0 left-0 flex items-center justify-between w-full h-20 px-4 text-gray-700 md:h-28 md:px-20 lg:px-40 bg-neutral-100/80"
 >
   <div
-    class="text-lg font-semibold cursor-pointer md:text-2xl"
+    class="px-2 text-2xl cursor-pointer w-36 md:w-fit md:w-unset md:text-5xl"
     [routerLink]="'home'"
   >
     Mobile Massage of Raleigh
   </div>
-  <div class="items-center hidden lg:flex">
+  <div class="items-center hidden font-sans lg:flex">
     <div
       *ngFor="let link of navLinks"
       class="nav-link"
@@ -41,7 +41,7 @@
   <div
     #menu
     *ngIf="menuOpen"
-    class="absolute right-0 z-50 w-full max-w-[450px] bg-neutral-200 top-20 md:top-28"
+    class="absolute right-0 z-50 w-full max-w-[450px] bg-neutral-200 top-20 md:top-28 font-sans"
   >
     <div
       *ngFor="let link of navLinks"
