@@ -1,7 +1,7 @@
 <div class="relative w-screen h-screen bg-img">
   <div class="w-full h-full backdrop-blur-sm bg-black/50">
     <app-navbar></app-navbar>
-    <div [@routeAnimations]="getRouteAnimationData()">
+    <div [@fadeInOut]="getRouterAnimationData()">
       <router-outlet></router-outlet>
     </div>
     <app-footer></app-footer>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
+import { Component } from '@angular/core';
 import { fadeInOut } from 'src/app/animations/fade';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private contexts: ChildrenOutletContexts) {}
 
-  getRouteAnimationData() {
+  getRouterAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
       'animation'
     ];

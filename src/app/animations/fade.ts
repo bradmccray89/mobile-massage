@@ -4,28 +4,40 @@ import {
   style,
   animate,
   query,
+  animateChild,
+  group,
 } from '@angular/animations';
 
-export const fadeInOut = trigger('routeAnimations', [
+export const fadeInOut = trigger('fadeInOut', [
   transition('* => *', [
-    query(':enter', [style({ opacity: 0 })], {
-      optional: true,
-    }),
+    style({ position: 'relative' }),
     query(
-      ':leave',
+      ':enter, :leave',
       [
-        style({ opacity: 1 }),
-        animate('500ms ease-in-out', style({ opacity: 0 })),
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
+        }),
       ],
       { optional: true }
     ),
-    query(
-      ':enter',
-      [
-        style({ opacity: 0 }),
-        animate('500ms 200ms ease-in-out', style({ opacity: 1 })),
-      ],
-      { optional: true }
-    ),
+    query(':enter', [style({ opacity: 0 })], { optional: true }),
+    query(':leave', animateChild(), { optional: true }),
+    group([
+      query(':leave', [animate('500ms ease-out', style({ opacity: 0 }))], {
+        optional: true,
+      }),
+      query(
+        ':enter',
+        [animate('500ms 300ms ease-out', style({ opacity: 1 }))],
+        {
+          optional: true,
+        }
+      ),
+      query('*', animateChild(), { optional: true }),
+    ]),
   ]),
 ]);
