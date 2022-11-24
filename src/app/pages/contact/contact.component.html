@@ -1,10 +1,37 @@
 <div class="page-container">
   <div class="flex flex-col">
-    <div class="text-4xl font-bold text-center text-teal-500">Contact Us</div>
     <div
-      class="flex items-start justify-center p-4 font-sans text-gray-700 rounded-xl h-fit gap-x-4 bg-white/70"
+      class="flex flex-col items-start justify-center mt-8 md:flex-row h-fit"
     >
-      We'd love to hear from you!
+      <div
+        class="flex flex-col items-center justify-center order-2 p-8 md:border-r md:order-1"
+      >
+        <div class="mb-4 font-sans text-4xl font-light text-gray-200">
+          Hours
+        </div>
+        <ul class="font-sans whitespace-nowrap hours">
+          <li><span>Monday:</span> <span>8:30am - 8:30pm</span></li>
+          <li><span>Tuesday:</span> <span>8:30am - 8:30pm</span></li>
+          <li><span>Wednesday:</span> <span>8:30am - 8:30pm</span></li>
+          <li><span>Thursday:</span> <span>8:30am - 8:30pm</span></li>
+          <li><span>Friday:</span> <span>8:30am - 8:30pm</span></li>
+          <li><span>Saturday:</span> <span>8:30am - 8:30pm</span></li>
+          <li><span>Sunday:</span> <span>Closed</span></li>
+        </ul>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center order-1 w-full p-8 md:order-2"
+      >
+        <div class="mb-4 font-sans text-4xl font-light text-gray-200">
+          Phone
+        </div>
+        <a
+          [href]="'tel:+1' + phoneNumber"
+          class="flex items-center justify-center px-4 pt-1 pb-2 font-sans text-xl font-light border border-gray-200 rounded hover:bg-white/20"
+        >
+          {{ phoneNumber | phone }}
+        </a>
+      </div>
     </div>
   </div>
 </div>

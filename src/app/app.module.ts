@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServicesComponent } from './pages/services/services.component';
-import { ContactComponent } from './pages/contact/contact.component';
+import { ContactComponent, PhonePipe } from './pages/contact/contact.component';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
 
 @NgModule({
@@ -22,6 +22,7 @@ import { ServiceDetailsComponent } from './components/service-details/service-de
     ServicesComponent,
     ContactComponent,
     ServiceDetailsComponent,
+    PhonePipe,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
